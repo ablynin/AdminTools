@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>AdminTools</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="CentralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
@@ -142,7 +142,7 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QCheckBox" name="checkBox_passgen_csymbols">
+              <widget class="QCheckBox" name="checkBox_passgen_symbols">
                <property name="text">
                 <string>Cyrillic symbols</string>
                </property>
@@ -239,7 +239,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_emailchecker">
+      <widget class="QWidget" name="tab_email_checker">
        <attribute name="title">
         <string>E-mail checker</string>
        </attribute>
@@ -252,7 +252,7 @@
           <widget class="QWidget" name="horizontalLayoutWidget_3">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
-             <widget class="QTextEdit" name="textEdit_emailchecker">
+             <widget class="QTextEdit" name="textEdit_email_checker">
               <property name="horizontalScrollBarPolicy">
                <enum>Qt::ScrollBarAsNeeded</enum>
               </property>
@@ -266,48 +266,48 @@
           <widget class="QWidget" name="verticalLayoutWidget">
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <item>
-             <widget class="QGroupBox" name="groupBox_emailchecker_hilight">
+             <widget class="QGroupBox" name="groupBox_email_checker_highlight">
               <property name="title">
-               <string>Hilight:</string>
+               <string>Highlight:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_latin">
+                <widget class="QCheckBox" name="checkBox_email_checker_latin">
                  <property name="text">
                   <string>Latin</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_cyrillic">
+                <widget class="QCheckBox" name="checkBox_email_checker_cyrillic">
                  <property name="text">
                   <string>Cyrillic</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_numbers">
+                <widget class="QCheckBox" name="checkBox_email_checker_numbers">
                  <property name="text">
                   <string>Numbers</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_spaces">
+                <widget class="QCheckBox" name="checkBox_email_checker_spaces">
                  <property name="text">
                   <string>Spaces</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_punctuation">
+                <widget class="QCheckBox" name="checkBox_email_checker_punctuation">
                  <property name="text">
                   <string>Punctuation</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_emails">
+                <widget class="QCheckBox" name="checkBox_email_checker_emails">
                  <property name="text">
                   <string>Valid e-mails</string>
                  </property>
@@ -317,27 +317,27 @@
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="groupBox_emailchecker_edit">
+             <widget class="QGroupBox" name="groupBox_email_checker_edit">
               <property name="title">
                <string>Edit:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_empty">
+                <widget class="QCheckBox" name="checkBox_email_checker_empty">
                  <property name="text">
                   <string>Remove empty lines</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_replace">
+                <widget class="QCheckBox" name="checkBox_email_checker_replace">
                  <property name="text">
                   <string>Replace cyrillic</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox_emailchecker_noemails">
+                <widget class="QCheckBox" name="checkBox_email_checker_no_emails">
                  <property name="text">
                   <string>Remove non e-mail</string>
                  </property>
@@ -347,7 +347,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_emailchecker_clipboard">
+             <widget class="QPushButton" name="pushButton_email_checker_clipboard">
               <property name="text">
                <string>To clipboard</string>
               </property>
@@ -365,13 +365,13 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
-         <widget class="QGroupBox" name="groupBox_other_macformat">
+         <widget class="QGroupBox" name="groupBox_other_mac_format">
           <property name="title">
            <string>MAC format:</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <widget class="QLineEdit" name="lineEdit_other_macformat">
+            <widget class="QLineEdit" name="lineEdit_other_mac_format">
              <property name="inputMask">
               <string>HH:HH:HH:HH:HH:HH;_</string>
              </property>
@@ -381,21 +381,21 @@
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox_other_macformat_linux">
+            <widget class="QCheckBox" name="checkBox_other_mac_format_linux">
              <property name="text">
               <string>Linux</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox_other_macformat_uppercase">
+            <widget class="QCheckBox" name="checkBox_other_mac_format_uppercase">
              <property name="text">
               <string>Upper case</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_other_macformat_toclipboard">
+            <widget class="QPushButton" name="pushButton_other_mac_format_to_clipboard">
              <property name="text">
               <string>To clipboard</string>
              </property>
@@ -405,23 +405,23 @@
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="groupBox_other_phonenumber">
+         <widget class="QGroupBox" name="groupBox_other_phone_number">
           <property name="title">
            <string>Phone number normalizer:</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
-            <widget class="QLineEdit" name="lineEdit_other_phonenumber"/>
+            <widget class="QLineEdit" name="lineEdit_other_phone_number"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox_other_phonenumber">
+            <widget class="QCheckBox" name="checkBox_other_phone_number">
              <property name="text">
               <string>Escape by *</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_other_phonenumber_toclipboard">
+            <widget class="QPushButton" name="pushButton_other_phone_number_to_clipboard">
              <property name="text">
               <string>To clipboard</string>
              </property>
@@ -491,7 +491,7 @@
             </layout>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_other_transliteration_toclipboard">
+            <widget class="QPushButton" name="pushButton_other_transliteration_to_clipboard">
              <property name="text">
               <string>To clipboard</string>
              </property>
@@ -568,7 +568,7 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QLabel" name="label_other_ipcalc_hostcount">
+              <widget class="QLabel" name="label_other_ipcalc_host_count">
                <property name="frameShape">
                 <enum>QFrame::Box</enum>
                </property>
@@ -660,7 +660,7 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QLabel" name="label_other_ipcalc_hostmin">
+              <widget class="QLabel" name="label_other_ipcalc_host_min">
                <property name="frameShape">
                 <enum>QFrame::Box</enum>
                </property>
@@ -695,7 +695,7 @@
               </widget>
              </item>
              <item row="4" column="1">
-              <widget class="QLabel" name="label_other_ipcalc_hostmax">
+              <widget class="QLabel" name="label_other_ipcalc_host_max">
                <property name="frameShape">
                 <enum>QFrame::Box</enum>
                </property>
@@ -833,7 +833,7 @@
   <tabstop>checkBox_passgen_numbers</tabstop>
   <tabstop>checkBox_passgen_symbols</tabstop>
   <tabstop>checkBox_passgen_spaces</tabstop>
-  <tabstop>checkBox_passgen_csymbols</tabstop>
+  <tabstop>checkBox_passgen_symbols</tabstop>
   <tabstop>checkBox_passgen_escape</tabstop>
   <tabstop>pushButton_passgen_generate</tabstop>
   <tabstop>pushButton_passgen_clipboard</tabstop>

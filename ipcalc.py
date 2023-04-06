@@ -12,14 +12,14 @@ class Ipaddress():
     def ip(self, ip):
         ip_mask = ip.split('/')
         self._ip = ip_mask[0]
-        self._masks = [self._bin_to_address(self._mask_to_bin(x)) for x in range(33)]
+        self.masks = [self._bin_to_address(self._mask_to_bin(x)) for x in range(33)]
         self._mask = 32
         if len(ip_mask) == 2:
             try:
                 self._mask = int(ip_mask[1])
             except ValueError:
-                if self._mask in self._masks:
-                    self._mask = self._masks.index(self._mask)
+                if self._mask in self.masks:
+                    self._mask = self.masks.index(self._mask)
                 else:
                     raise
 

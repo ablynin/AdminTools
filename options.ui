@@ -482,7 +482,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_fonts_emailchecker">
+        <widget class="QGroupBox" name="groupBox_fonts_email_checker">
          <property name="title">
           <string>E-mail checker</string>
          </property>
@@ -500,7 +500,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QFontComboBox" name="fontComboBox_fonts_emailchecker"/>
+             <widget class="QFontComboBox" name="fontComboBox_fonts_email_checker"/>
             </item>
            </layout>
           </item>
@@ -517,7 +517,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_fonts_emailchecker">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox_fonts_email_checker">
               <property name="maximum">
                <double>100.000000000000000</double>
               </property>
@@ -530,7 +530,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="checkBox_emailchecker_Bold">
+             <widget class="QCheckBox" name="checkBox_email_checker_Bold">
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -613,11 +613,11 @@
    <receiver>Dialog</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel">
+    <hint type="source_label">
      <x>248</x>
      <y>254</y>
     </hint>
-    <hint type="destinationlabel">
+    <hint type="destination_label">
      <x>157</x>
      <y>274</y>
     </hint>
@@ -629,11 +629,11 @@
    <receiver>Dialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel">
+    <hint type="source_label">
      <x>316</x>
      <y>260</y>
     </hint>
-    <hint type="destinationlabel">
+    <hint type="destination_label">
      <x>286</x>
      <y>274</y>
     </hint>
