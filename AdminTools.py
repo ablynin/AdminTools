@@ -21,6 +21,7 @@ from ipcalc import Ipaddress
 
 import phonenormalizer
 import toolstreemodel
+import translit
 
 
 _translate = QtCore.QCoreApplication.translate
@@ -87,9 +88,6 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
         copyall_shortcut = QtWidgets.QShortcut(copyall_keysequence, self)
         copyall_shortcut.activated.connect(self.toclipboard)
 
-        self.action_Copy_all.setShortcut(copyall_keysequence)
-        self.action_Copy_all.triggered.connect(self.toclipboard)
-
         self.menubar.hovered.connect(self.main_menu_modifier)
 
         self.lineEdit_other_macformat.textChanged.connect(self.set_mac_format)
@@ -102,28 +100,30 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
         self.pushButton_other_phonenumber_toclipboard.clicked.connect(self.toclipboard)
         self.checkBox_other_phonenumber.clicked.connect(self._normalize_number)
 
+        self.lineEdit_other_transliteration.textChanged.connect(self._transliterate)
+        self.radioButton_other_transliteration_as_is.toggled.connect(self._transliterate)
+        self.radioButton_other_transliteration_upper.toggled.connect(self._transliterate)
+        self.radioButton_other_transliteration_lower.toggled.connect(self._transliterate)
+
         self._ip = Ipaddress()
 
         cbis = ['%s (%s)' % (self._ip._masks.index(x), x) for x in self._ip._masks][::-1]
         self.comboBox_other_ipcalc_mask.addItems(cbis)
 
-        # self.groupBox_other_macformat.show()
-        # self.lineEdit_other_ipcalc_ipaddr.setText('192.168.0.5')
-
         self.tmp_colors = {}
         self.init_about()
         self._history = History()
-        # self.tools = []
         self.tool_names = {}
-        # self._set_tool_names()
         self.tabWidget.tabBar().tabMoved.connect(self._tool_tab_moved)
         self.tool_tabs = [self.tabWidget.widget(i) for i in range(self.tabWidget.count())]
-        # for t in self.tool_tabs:
-        #     print(t.isVisible())
-        # for i in range(self.tabWidget.count()):
-        #     self.tool_tabs[self.tabWidget.widget(i)] = i
         self.toolsModel = toolstreemodel.TreeModel()
-        # print("Main window inited")
+
+    def _transliterate(self):
+        self.label_other_transliteration.setText(translit.translit(self.lineEdit_other_transliteration.text()))
+        if self.radioButton_other_transliteration_lower.isChecked():
+            self.label_other_transliteration.setText(self.label_other_transliteration.text().lower())
+        elif self.radioButton_other_transliteration_upper.isChecked():
+            self.label_other_transliteration.setText(self.label_other_transliteration.text().upper())
 
     def _set_tool_names(self):
         # print('Setting tool names: %s' % self.sender())
@@ -201,13 +201,10 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
         if self.tabWidget.currentIndex() == 0:
             self.action_Undo.setEnabled(False)
             self.action_Redo.setEnabled(False)
-            self.action_Copy_all.setEnabled(True)
-            # self.action_Copy_all.triggered.connect(self.pushButton_passgen_clipboard.clicked)
         elif self.tabWidget.currentIndex() == 1:
             # print('Got it')
             self.action_Undo.setEnabled(self._history.undo_available)
             self.action_Redo.setEnabled(self._history.redo_available)
-            self.action_Copy_all.setEnabled(bool(self.textEdit_emailchecker.toPlainText()))
 
     def contextMenuEvent(self, point):
         menu = self.textEdit_emailchecker.createStandardContextMenu()
@@ -466,25 +463,23 @@ Program is written on Python 3.6 and QT 5.'''))
             self.textEdit_emailchecker.setFocus()
             return
         text = ''
-        if QObject.sender(self).objectName() == 'pushButton_passgen_clipboard' or\
-                ('action_Copy_all' and self.tabWidget.currentIndex() == 0):
+        if QObject.sender(self).objectName() == 'pushButton_passgen_clipboard':
             text = self.label_passgen_password.text()
-        elif QObject.sender(self).objectName() == 'pushButton_other_macformat_toclipboard' or\
-                (QObject.sender(self).objectName() == 'action_Copy_all' and
-                self.tabWidget.currentIndex() == 2 and self.lineEdit_other_macformat.hasFocus()):
+        elif QObject.sender(self).objectName() == 'pushButton_other_macformat_toclipboard':
             self.lineEdit_other_macformat.setFocus()
             self.lineEdit_other_macformat.setSelection(0, len(self.lineEdit_other_macformat.text()))
             text = self.lineEdit_other_macformat.text()
-        elif QObject.sender(self).objectName() == 'pushButton_other_phonenumber_toclipboard' or\
-                (QObject.sender(self).objectName() == 'action_Copy_all' and
-                self.tabWidget.currentIndex() == 2 and self.lineEdit_other_phonenumber.hasFocus()):
+        elif QObject.sender(self).objectName() == 'pushButton_other_phonenumber_toclipboard':
             self.lineEdit_other_phonenumber.setFocus()
             self.lineEdit_other_phonenumber.setSelection(0, len(self.lineEdit_other_phonenumber.text()))
             text = self.lineEdit_other_phonenumber.text()
-        elif QObject.sender(self).objectName() == 'pushButton_emailchecker_clipboard' or\
-                ('action_Copy_all' and self.tabWidget.currentIndex() == 1):
+        elif QObject.sender(self).objectName() == 'pushButton_emailchecker_clipboard':
             self.textEdit_emailchecker.setFocus()
             text = self.textEdit_emailchecker.toPlainText()
+        elif QObject.sender(self).objectName() == 'pushButton_other_transliteration_toclipboard':
+            self.label_other_transliteration.setFocus()
+            self.label_other_transliteration.setSelection(0, len(self.label_other_transliteration.text()))
+            text = self.label_other_transliteration.text()
 
         QApplication.clipboard().setText(text)
 
@@ -590,17 +585,17 @@ def save_settings(wnd, filename='%s\\%s.ini' % (inidir, appname)):
         tabname = tab.objectName()
         chkdict = {c.objectName():str(c.isChecked()) for c in tab.findChildren(QtWidgets.QCheckBox)}
         spndict = {c.objectName():str(c.value()) for c in tab.findChildren(QtWidgets.QSpinBox)}
+        rbtndict = {c.objectName():str(c.isChecked()) for c in tab.findChildren(QtWidgets.QRadioButton)}
         gbdict = {}
         if tab == wnd.tab_other:
             gbdict = {c.objectName():str(c.isEnabled()) for c in tab.findChildren(QtWidgets.QGroupBox)}
-        # rbtndict = {c.objectName():str(c.isChecked()) for c in tab.findChildren(QtWidgets.QRadioButton)}
         cfg[tabname] = {}
         cfg[tabname].update(chkdict)
         cfg[tabname].update(spndict)
         cfg[tabname].update(gbdict)
         cfg[tabname][TabPositionKeyName] = str(wnd.tabWidget.indexOf(tab))
         cfg[tabname][EnabledKeyName] = str(tab.isEnabled())
-        # cfg[tabname].update(rbtndict)
+        cfg[tabname].update(rbtndict)
 
         if i == wnd.tabWidget.currentIndex():
             cfg[tabname][CurrentTabKeyName] = 'True'
@@ -643,8 +638,8 @@ def load_settings(wnd, filename='%s\\%s.ini' % (inidir, appname)):
                     qtype = key.split('_')[0]
                     if qtype == 'checkBox':
                         tab.findChild(QtWidgets.QCheckBox, key).setChecked(cfg[sec][key] == 'True')
-                    # if qtype == 'radioButton':
-                    #     tab.findChild(QtWidgets.QRadioButton, key).setChecked(cfg[sec][key] == 'True')
+                    if qtype == 'radioButton':
+                        tab.findChild(QtWidgets.QRadioButton, key).setChecked(cfg[sec][key] == 'True')
                     if qtype == 'spinBox':
                         tab.findChild(QtWidgets.QSpinBox, key).setValue(int(cfg[sec][key]))
                     if qtype == 'groupBox':

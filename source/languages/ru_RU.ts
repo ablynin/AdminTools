@@ -4,27 +4,27 @@
 <context>
     <name>Application</name>
     <message>
-        <location filename="../../AdminTools.py" line="495"/>
+        <location filename="../../AdminTools.py" line="450"/>
         <source>Password length is not enough: </source>
-        <translation type="obsolete">Длина пароля недостаточна: </translation>
+        <translation>Длина пароля недостаточна: </translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="727"/>
+        <location filename="../../AdminTools.py" line="686"/>
         <source>Check or delete </source>
-        <translation type="obsolete">Проверьте или удалите </translation>
+        <translation>Проверьте или удалите </translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="727"/>
+        <location filename="../../AdminTools.py" line="686"/>
         <source>. Error while reading: </source>
-        <translation type="obsolete">.Ошибка чтения файла настроек: </translation>
+        <translation>.Ошибка чтения файла настроек: </translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="297"/>
+        <location filename="../../AdminTools.py" line="299"/>
         <source>About</source>
-        <translation type="obsolete">О программе</translation>
+        <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="304"/>
+        <location filename="../../AdminTools.py" line="306"/>
         <source>Admin tools program.
 
 Version: 1.0
@@ -34,7 +34,7 @@ Written by Alexander Ablynin for you.
 You can do with this program anything you want.
 
 Program is written on Python 3.6 and QT 5.</source>
-        <translation type="obsolete">Инструменты системного администратора.
+        <translation>Инструменты системного администратора.
 
 Версия: 1.0
 
@@ -45,51 +45,51 @@ Program is written on Python 3.6 and QT 5.</source>
 Программа написана на Python 3.6 и QT 5.</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="495"/>
+        <location filename="../../AdminTools.py" line="450"/>
         <source>
 Do you want to increase it?</source>
-        <translation type="obsolete">
+        <translation>
 Вы хотите её увеличить?</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="61"/>
+        <location filename="../../AdminTools.py" line="65"/>
         <source>Ctrl+Q</source>
-        <translation type="obsolete">Ctrl+Й</translation>
+        <translation>Ctrl+Й</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="71"/>
+        <location filename="../../AdminTools.py" line="75"/>
         <source>Ctrl+Z</source>
-        <translation type="obsolete">Ctrl+Я</translation>
+        <translation>Ctrl+Я</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="78"/>
+        <location filename="../../AdminTools.py" line="82"/>
         <source>Ctrl+Shift+Z</source>
-        <translation type="obsolete">Ctrl+Shift+Я</translation>
+        <translation>Ctrl+Shift+Я</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="83"/>
+        <location filename="../../AdminTools.py" line="87"/>
         <source>Ctrl+Shift+C</source>
-        <translation type="obsolete">Ctrl+Shift+С</translation>
+        <translation>Ctrl+Shift+С</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="179"/>
+        <location filename="../../AdminTools.py" line="184"/>
         <source>Invalid IP-address.</source>
-        <translation type="obsolete">Неверный IP-адрес.</translation>
+        <translation>Неверный IP-адрес.</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="126"/>
+        <location filename="../../AdminTools.py" line="131"/>
         <source>Password generator</source>
-        <translation type="obsolete">Генератор паролей</translation>
+        <translation>Генератор паролей</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="127"/>
+        <location filename="../../AdminTools.py" line="132"/>
         <source>E-mail checker</source>
-        <translation type="obsolete">Проверка e-mail</translation>
+        <translation>Проверка e-mail</translation>
     </message>
     <message>
-        <location filename="../../AdminTools.py" line="128"/>
+        <location filename="../../AdminTools.py" line="133"/>
         <source>Other</source>
-        <translation type="obsolete">Разное</translation>
+        <translation>Разное</translation>
     </message>
 </context>
 <context>
@@ -97,77 +97,77 @@ Do you want to increase it?</source>
     <message>
         <location filename="../../options.py" line="256"/>
         <source>Options</source>
-        <translation type="obsolete">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../../options.py" line="257"/>
         <source>Latin</source>
-        <translation type="obsolete">Латиница</translation>
+        <translation>Латиница</translation>
     </message>
     <message>
         <location filename="../../options.py" line="258"/>
         <source>Cyrillic</source>
-        <translation type="obsolete">Кириллица</translation>
+        <translation>Кириллица</translation>
     </message>
     <message>
         <location filename="../../options.py" line="259"/>
         <source>Numbers</source>
-        <translation type="obsolete">Числа</translation>
+        <translation>Числа</translation>
     </message>
     <message>
         <location filename="../../options.py" line="260"/>
         <source>Spaces</source>
-        <translation type="obsolete">Пробелы</translation>
+        <translation>Пробелы</translation>
     </message>
     <message>
         <location filename="../../options.py" line="261"/>
         <source>Punctuation</source>
-        <translation type="obsolete">Пунктуация</translation>
+        <translation>Пунктуация</translation>
     </message>
     <message>
         <location filename="../../options.py" line="262"/>
         <source>Valid emails</source>
-        <translation type="obsolete">Корректные адреса e-mail</translation>
+        <translation>Корректные адреса e-mail</translation>
     </message>
     <message>
         <location filename="../../options.py" line="263"/>
         <source>Replaced</source>
-        <translation type="obsolete">Заменённые</translation>
+        <translation>Заменённые</translation>
     </message>
     <message>
         <location filename="../../options.py" line="264"/>
         <source>Colors</source>
-        <translation type="obsolete">Цвета</translation>
+        <translation>Цвета</translation>
     </message>
     <message>
         <location filename="../../options.py" line="265"/>
         <source>Password generator</source>
-        <translation type="obsolete">Генератор паролей</translation>
+        <translation>Генератор паролей</translation>
     </message>
     <message>
         <location filename="../../options.py" line="270"/>
         <source>Font:</source>
-        <translation type="obsolete">Шрифт:</translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <location filename="../../options.py" line="271"/>
         <source>Size:</source>
-        <translation type="obsolete">Размер:</translation>
+        <translation>Размер:</translation>
     </message>
     <message>
         <location filename="../../options.py" line="272"/>
         <source>B</source>
-        <translation type="obsolete">Ж</translation>
+        <translation>Ж</translation>
     </message>
     <message>
         <location filename="../../options.py" line="269"/>
         <source>E-mail checker</source>
-        <translation type="obsolete">Проверка e-mail</translation>
+        <translation>Проверка e-mail</translation>
     </message>
     <message>
         <location filename="../../options.py" line="273"/>
         <source>Fonts</source>
-        <translation type="obsolete">Шрифты</translation>
+        <translation>Шрифты</translation>
     </message>
     <message>
         <location filename="../../AdminTools.py" line="360"/>
@@ -177,83 +177,83 @@ Do you want to increase it?</source>
     <message>
         <location filename="../../options.py" line="274"/>
         <source>Tools</source>
-        <translation type="obsolete">Инструменты</translation>
+        <translation>Инструменты</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../mainwindow.py" line="422"/>
+        <location filename="../../MainWindow.py" line="421"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="424"/>
+        <location filename="../../MainWindow.py" line="423"/>
         <source>Characters:</source>
         <translation>Символы:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="425"/>
+        <location filename="../../MainWindow.py" line="424"/>
         <source>Cyrillic upper case</source>
         <translation>Кириллица заглавные</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="443"/>
+        <location filename="../../MainWindow.py" line="442"/>
         <source>Spaces</source>
         <translation>Пробелы</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="427"/>
+        <location filename="../../MainWindow.py" line="426"/>
         <source>Latin lower case</source>
         <translation>Латиница строчные</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="428"/>
+        <location filename="../../MainWindow.py" line="427"/>
         <source>Escape all symbols</source>
         <translation>Экранировать символы</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="429"/>
+        <location filename="../../MainWindow.py" line="428"/>
         <source>Latin upper case</source>
         <translation>Латиница заглавные</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="430"/>
+        <location filename="../../MainWindow.py" line="429"/>
         <source>Cyrillic lower case</source>
         <translation>Кириллица строчные</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="431"/>
+        <location filename="../../MainWindow.py" line="430"/>
         <source>Pretty symbols</source>
         <translation>Легкочитаемые символы</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="432"/>
+        <location filename="../../MainWindow.py" line="431"/>
         <source>Cyrillic symbols</source>
         <translation>Кириллица символы</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="442"/>
+        <location filename="../../MainWindow.py" line="441"/>
         <source>Numbers</source>
         <translation>Числа</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="434"/>
+        <location filename="../../MainWindow.py" line="433"/>
         <source>Symbols</source>
         <translation>Символы</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="435"/>
+        <location filename="../../MainWindow.py" line="434"/>
         <source>Unique string</source>
         <translation>Уникальная строка</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="436"/>
+        <location filename="../../MainWindow.py" line="435"/>
         <source>Generate</source>
         <translation>Генерировать</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="465"/>
+        <location filename="../../MainWindow.py" line="464"/>
         <source>To clipboard</source>
         <translation>Копировать</translation>
     </message>
@@ -263,17 +263,17 @@ Do you want to increase it?</source>
         <translation type="obsolete">Файл</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="475"/>
+        <location filename="../../MainWindow.py" line="474"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="476"/>
+        <location filename="../../MainWindow.py" line="475"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="477"/>
+        <location filename="../../MainWindow.py" line="476"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
@@ -283,47 +283,47 @@ Do you want to increase it?</source>
         <translation type="obsolete">Выход</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="480"/>
+        <location filename="../../MainWindow.py" line="479"/>
         <source>English</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="481"/>
+        <location filename="../../MainWindow.py" line="480"/>
         <source>Russian</source>
         <translation>Русский</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="482"/>
+        <location filename="../../MainWindow.py" line="481"/>
         <source>About...</source>
         <translation>О программе...</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="438"/>
+        <location filename="../../MainWindow.py" line="437"/>
         <source>Password generator</source>
         <translation>Генератор паролей</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="423"/>
+        <location filename="../../MainWindow.py" line="422"/>
         <source>Length:</source>
         <translation>Длина:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="439"/>
+        <location filename="../../MainWindow.py" line="438"/>
         <source>Hilight:</source>
         <translation>Подсветка:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="440"/>
+        <location filename="../../MainWindow.py" line="439"/>
         <source>Latin</source>
         <translation>Латиница</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="441"/>
+        <location filename="../../MainWindow.py" line="440"/>
         <source>Cyrillic</source>
         <translation>Кириллица</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="444"/>
+        <location filename="../../MainWindow.py" line="443"/>
         <source>Punctuation</source>
         <translation>Пунктуация</translation>
     </message>
@@ -333,169 +333,174 @@ Do you want to increase it?</source>
         <translation type="obsolete">Корректные адреса email</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="446"/>
+        <location filename="../../MainWindow.py" line="445"/>
         <source>Edit:</source>
         <translation>Правка:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="447"/>
+        <location filename="../../MainWindow.py" line="446"/>
         <source>Remove empty lines</source>
         <translation>Удалить пустые строки</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="448"/>
+        <location filename="../../MainWindow.py" line="447"/>
         <source>Replace cyrillic</source>
         <translation>Заменить кириллицу</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="449"/>
+        <location filename="../../MainWindow.py" line="448"/>
         <source>Remove non e-mail</source>
         <translation>Удалить некорректные e-mail</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="451"/>
+        <location filename="../../MainWindow.py" line="450"/>
         <source>E-mail checker</source>
         <translation>Проверка e-mail</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="474"/>
+        <location filename="../../MainWindow.py" line="473"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="478"/>
+        <location filename="../../MainWindow.py" line="477"/>
         <source>&amp;Edit</source>
         <translation>&amp;Правка</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="479"/>
+        <location filename="../../MainWindow.py" line="478"/>
         <source>&amp;Quit</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="483"/>
+        <location filename="../../MainWindow.py" line="482"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="484"/>
+        <location filename="../../MainWindow.py" line="483"/>
         <source>&amp;Undo</source>
         <translation>&amp;Отменить</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="485"/>
+        <location filename="../../MainWindow.py" line="484"/>
         <source>&amp;Redo</source>
         <translation>&amp;Вернуть</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="486"/>
+        <location filename="../../MainWindow.py" line="485"/>
         <source>&amp;Copy all</source>
         <translation>&amp;Копировать всё</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="445"/>
+        <location filename="../../MainWindow.py" line="444"/>
         <source>Valid e-mails</source>
         <translation>Корректные адреса e-mail</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="421"/>
+        <location filename="../../MainWindow.py" line="420"/>
         <source>AdminTools</source>
         <translation>Инструмены администратора</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="452"/>
+        <location filename="../../MainWindow.py" line="451"/>
         <source>MAC format:</source>
         <translation>Формат MAC:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="453"/>
+        <location filename="../../MainWindow.py" line="452"/>
         <source>HH:HH:HH:HH:HH:HH;_</source>
         <translation>HH:HH:HH:HH:HH:HH;_</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="454"/>
+        <location filename="../../MainWindow.py" line="453"/>
         <source>Linux</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="455"/>
+        <location filename="../../MainWindow.py" line="454"/>
         <source>Upper case</source>
         <translation>Заглавные</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="466"/>
+        <location filename="../../MainWindow.py" line="465"/>
         <source>IP calculator:</source>
         <translation>Калькулятор IP:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="467"/>
+        <location filename="../../MainWindow.py" line="466"/>
         <source>Calculate</source>
         <translation>Рассчитать</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="468"/>
+        <location filename="../../MainWindow.py" line="467"/>
         <source>Network:</source>
         <translation>Сеть:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="469"/>
+        <location filename="../../MainWindow.py" line="468"/>
         <source>Host count:</source>
         <translation>Количество хостов:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="470"/>
+        <location filename="../../MainWindow.py" line="469"/>
         <source>Broadcast:</source>
         <translation>Широковещательный адрес:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="471"/>
+        <location filename="../../MainWindow.py" line="470"/>
         <source>Host min:</source>
         <translation>Минимальный хост:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="472"/>
+        <location filename="../../MainWindow.py" line="471"/>
         <source>Host max:</source>
         <translation>Максимальный хост:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="473"/>
+        <location filename="../../MainWindow.py" line="472"/>
         <source>Other</source>
         <translation>Разное</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="457"/>
+        <location filename="../../MainWindow.py" line="456"/>
         <source>Phone number normalizer:</source>
         <translation>Нормализация телефонного номера:</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="458"/>
+        <location filename="../../MainWindow.py" line="457"/>
         <source>Escape by *</source>
         <translation>Экранировать знаком &quot;*&quot;</translation>
     </message>
     <message>
         <location filename="../../mainwindow.py" line="460"/>
         <source>Transliteration</source>
-        <translation>Транслитерация</translation>
+        <translation type="obsolete">Транслитерация</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="461"/>
+        <location filename="../../MainWindow.py" line="460"/>
         <source>Result</source>
         <translation>Результат</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="462"/>
+        <location filename="../../MainWindow.py" line="461"/>
         <source>As is</source>
         <translation>Как есть</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="463"/>
+        <location filename="../../MainWindow.py" line="462"/>
         <source>UPPER CASE</source>
         <translation>ЗАГЛАВНЫЕ</translation>
     </message>
     <message>
-        <location filename="../../mainwindow.py" line="464"/>
+        <location filename="../../MainWindow.py" line="463"/>
         <source>lower case</source>
         <translation>прописные</translation>
+    </message>
+    <message>
+        <location filename="../../MainWindow.py" line="459"/>
+        <source>Transliteration:</source>
+        <translation>Транслитерация:</translation>
     </message>
 </context>
 </TS>

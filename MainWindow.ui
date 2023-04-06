@@ -433,7 +433,7 @@
         <item>
          <widget class="QGroupBox" name="groupBox_other_transliteration">
           <property name="title">
-           <string>Transliteration</string>
+           <string>Transliteration:</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_8">
            <item>
@@ -759,7 +759,6 @@
     </property>
     <addaction name="action_Undo"/>
     <addaction name="action_Redo"/>
-    <addaction name="action_Copy_all"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
