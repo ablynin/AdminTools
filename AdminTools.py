@@ -35,7 +35,7 @@ FontsSectionName = 'Fonts'
 
 src_dir = 'source'
 lang_dir = r'%s\languages' % src_dir
-icon = r'%s\Spanner.ico' % src_dir
+icon = r'%s\AdminTools.ico' % src_dir
 ini_dir = src_dir
 langs = ['', 'ru_RU.qm']
 
