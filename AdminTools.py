@@ -336,11 +336,10 @@ Program is written on Python 3.6 and QT 5.'''))
             if isinstance(o, QtWidgets.QGroupBox):
                 o.setVisible(o.isEnabled())
             elif isinstance(o, QtWidgets.QWidget):
-                if o.isEnabled():
-                    if self.tabWidget.indexOf(o) < 0:
-                        self.tabWidget.insertTab(self.tool_tabs.index(o), o, self.tool_names[o])
-                        self.tabWidget.setCurrentIndex(self.tool_tabs.index(o))
-                else:
+                if self.tabWidget.indexOf(o) < 0:
+                    self.tabWidget.insertTab(self.tool_tabs.index(o), o, self.tool_names[o])
+                    self.tabWidget.setCurrentIndex(self.tool_tabs.index(o))
+                if not o.isEnabled():
                     to_remove.append(self.tool_tabs.index(o))
 
         to_remove.sort(reverse=True)
