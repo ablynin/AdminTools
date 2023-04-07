@@ -1,9 +1,12 @@
 # -*- mode: python -*-
+import os
+import shutil
 
 block_cipher = None
+progname = 'AdminTools'
 
 
-a = Analysis(['Z:\\Python Projects\\AdminTools\\AdminTools.py'],
+a = Analysis([fr'Z:\Python Projects\{progname}\{progname}.py'],
              pathex=[],
              binaries=[],
              datas=[],
@@ -22,9 +25,13 @@ exe = EXE(pyz,
 		  a.binaries,
           a.zipfiles,
           a.datas,
-		  icon=r'source\Spanner.ico',
+		  icon=r'source\AdminTools.ico',
           name='AdminTools',
           debug=False,
           strip=False,
           upx=True,
           console=False )
+
+src = 'source'
+tgt = 'dist'
+shutil.copytree(src, os.path.join(tgt, src), ignore=shutil.ignore_patterns('*.ts'))

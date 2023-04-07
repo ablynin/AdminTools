@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AdminTools.iml" filepath="$PROJECT_DIR$/.idea/AdminTools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../ModelCreatorEditor/.idea/ModelCreatorEditor.iml" filepath="$PROJECT_DIR$/../ModelCreatorEditor/.idea/ModelCreatorEditor.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/untitled.iml" filepath="$PROJECT_DIR$/.idea/untitled.iml" />
     </modules>
   </component>

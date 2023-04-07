@@ -34,11 +34,8 @@ class History:
     def undo(self):
         if self.history_pos >= 1:
             self.history_pos -= 1
-
         pos = self.history_pos
         snap = self._get(pos)
-
-
         return snap
 
     def redo(self):
@@ -50,24 +47,4 @@ class History:
         snap = self._get(pos)
         if self.history_pos < len(self.history) - 1:
             self.history_pos += 1
-
         return snap
-
-
-if __name__ == '__main__':
-    h = History()
-    h.add({0:True})
-    h.add({1:True})
-    h.add({2:True})
-    h.add({3:True})
-    h.add({4:True})
-    print(h.history)
-    for i in range(2):
-        print('undo', h.undo())
-    # h.add({4:True})
-    # print(h.history_pos, h.history)
-    for i in range(2):
-        print('redo', h.redo())
-
-
-    # print(h.history)

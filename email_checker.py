@@ -4,17 +4,59 @@ import string
 from pass_gen import cyrillic_letters
 import re
 
-flags_def = {'empty':'e', 'latin':'l', 'cyrillic':'c', 'numbers':'n', 'spaces':'s', 'punctuation':'p', 'emails':'m',
-             'replace':'r', 'noemails':'d', 'default':'f', 'password':'w'}
+flags_def = {
+    'empty': 'e',
+    'latin': 'l',
+    'cyrillic': 'c',
+    'numbers': 'n',
+    'spaces': 's',
+    'punctuation': 'p',
+    'emails': 'm',
+    'replace': 'r',
+    'no_emails': 'd',
+    'default': 'f',
+    'password': 'w'
+}
 
-colors_def = {flags_def['latin']:'green', flags_def['cyrillic']:'red', flags_def['numbers']:'blue',
-              flags_def['spaces']:'yellow', flags_def['punctuation']:'orange', flags_def['emails']:'lime',
-              flags_def['replace']:'yellow', flags_def['default']:'black', flags_def['password']:'black'}
+colors_def = {
+    flags_def['latin']: 'green',
+    flags_def['cyrillic']: 'red',
+    flags_def['numbers']: 'blue',
+    flags_def['spaces']: 'yellow',
+    flags_def['punctuation']: 'orange',
+    flags_def['emails']: 'lime',
+    flags_def['replace']: 'yellow',
+    flags_def['default']: 'black',
+    flags_def['password']: 'black'
+}
 
-hilight_styles = {}
+highlight_styles = {}
 
-replace_dict = {'А':'A','В':'B','Е':'E','З':'3','К':'K','М':'M','Н':'H','О':'O','Р':'P','С':'C','Т':'T','У':'Y','Х':'X',
-                'Ь':'b','а':'a','б':'6','е':'e','о':'o','р':'p','с':'c','у':'y','х':'x'}
+replace_dict = {
+    'А': 'A',
+    'В': 'B',
+    'Е': 'E',
+    'З': '3',
+    'К': 'K',
+    'М': 'M',
+    'Н': 'H',
+    'О': 'O',
+    'Р': 'P',
+    'С': 'C',
+    'Т': 'T',
+    'У': 'Y',
+    'Х': 'X',
+    'Ь': 'b',
+    'а': 'a',
+    'б': '6',
+    'е': 'e',
+    'о': 'o',
+    'р': 'p',
+    'с': 'c',
+    'у': 'y',
+    'х': 'x'
+}
+
 mail_regex_string = r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)"
 mail_regex = re.compile(mail_regex_string)
 
@@ -27,39 +69,61 @@ emptyTextEditContext = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
 p, li { white-space: pre-wrap; }
 </style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p></body></html>'''
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; '''
+'''-qt-block-indent:0; text-indent:0px;"><br /></p></body></html>'''
 
 testTextEditContext = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
 p, li { white-space: pre-wrap; }
 </style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">T<span class="cyrillic">ES</span>T</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Y<span class="latin">YYY</span>Y</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">testТЕUСТ123gest</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p></body></html>'''
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; '''
+'''-qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; '''
+'''text-indent:0px;">T<span class="cyrillic">ES</span>T</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; '''
+'''text-indent:0px;">Y<span class="latin">YYY</span>Y</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; '''
+'''-qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; '''
+'''-qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; '''
+'''text-indent:0px;">testТЕUСТ123gest</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; '''
+'''-qt-block-indent:0; text-indent:0px;"><br /></p></body></html>'''
+
 
 def new_line(soup):
-    return soup.new_tag('p', style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;")
+    return soup.new_tag(
+        'p',
+        style=" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+              "margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+    )
 
-def hilight_styles_init():
-    global hilight_styles
-    hilight_styles = {flags_def['latin']: '.latin {color: %s;}\n' % colors_def[flags_def['latin']],
-                  flags_def['cyrillic']: '.cyrillic {color: %s;}\n' % colors_def[flags_def['cyrillic']],
-                  flags_def['numbers']: '.numbers {color: %s;}\n' % colors_def[flags_def['numbers']],
-                  flags_def['spaces']: '.spaces {background-color: %s;}\n' % colors_def[flags_def['spaces']],
-                  flags_def['punctuation']: '.punctuation {color: %s;}\n' % colors_def[flags_def['punctuation']],
-                  flags_def['emails']: '.emails {background-color: %s}\n' % colors_def[flags_def['emails']],
-                  flags_def['replace']: '.replace {color: %s;}\n' % colors_def[flags_def['replace']]}
+
+def highlight_styles_init():
+    global highlight_styles
+    highlight_styles = {
+        flags_def['latin']: '.latin {color: %s;}\n' % colors_def[flags_def['latin']],
+        flags_def['cyrillic']: '.cyrillic {color: %s;}\n' % colors_def[flags_def['cyrillic']],
+        flags_def['numbers']: '.numbers {color: %s;}\n' % colors_def[flags_def['numbers']],
+        flags_def['spaces']: '.spaces {background-color: %s;}\n' % colors_def[flags_def['spaces']],
+        flags_def['punctuation']: '.punctuation {color: %s;}\n' % colors_def[flags_def['punctuation']],
+        flags_def['emails']: '.emails {background-color: %s}\n' % colors_def[flags_def['emails']],
+        flags_def['replace']: '.replace {color: %s;}\n' % colors_def[flags_def['replace']]
+    }
+
 
 def new_empty_line(soup):
-    nt = soup.new_tag('p', style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;")
+    nt = soup.new_tag(
+        'p',
+        style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+              "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+    )
     nt.append(soup.new_tag('br'))
     return nt
 
-def hilight_emails(line, soup, flags=''):
+
+def highlight_emails(line, soup, flags=''):
     spl = []
     if flags_def['emails'] in flags:
         tag_span_emails = soup.new_tag('span')
@@ -83,7 +147,7 @@ def hilight_emails(line, soup, flags=''):
     return spl or [line]
 
 
-def hilight_text(line, soup, flags=''):
+def highlight_text(line, soup, flags=''):
     alphabet = []
     tag_span_latin = None
     tag_span_cyrillic = None
@@ -131,7 +195,7 @@ def hilight_text(line, soup, flags=''):
                 tag.append(tag_span_latin.__copy__())
                 tag_span_latin.string = ''
         elif flags_def['cyrillic'] in flags and letter in cyrillic_letters and (flags_def['replace'] not in flags or
-        letter not in replace_dict.keys()):
+                                                                                letter not in replace_dict.keys()):
             tag_span_cyrillic.append(letter)
             if i == len(line) - 1 or line[i + 1] not in cyrillic_letters:
                 tag.append(tag_span_cyrillic.__copy__())
@@ -167,54 +231,59 @@ def hilight_text(line, soup, flags=''):
     # print(tag)
     return tag
 
-def hilight_context(line, soup, flags=''):
+
+def highlight_context(line, soup, flags=''):
     if not line:
         soup.body.append(new_empty_line(soup))
         return
 
-    he = hilight_emails(line, soup, flags)
+    he = highlight_emails(line, soup, flags)
     ntg = []
     for h in he:
         if type(h) == Tag:
             tag_span_emails = soup.new_tag('span')
             tag_span_emails.attrs = {'class': 'emails'}
-            ht = hilight_text(h.text, soup, flags)
+            ht = highlight_text(h.text, soup, flags)
             for t in ht:
                 tag_span_emails.append(t)
             ntg.append(tag_span_emails.__copy__())
         else:
-            ntg += hilight_text(h, soup, flags)
+            ntg += highlight_text(h, soup, flags)
     tag = new_line(soup)
     for t in ntg:
         tag.append(t)
     soup.body.append(tag)
 
+
 def transform_context(text, flags=''):
-    context = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+    context = (
+        '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
 p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'%s'; font-size:%spt; font-weight:%s; font-style:normal; color:%s"></body></html>''' %\
-              (font_family, font_size, font_weight[bold], colors_def[flags_def['default']])
+</style></head><body '''
+        f'''style=" font-family:{font_family}'; font-size:{font_size}pt; font-weight:{font_weight[bold]}; '''
+        f'''font-style:normal; color:{colors_def[flags_def['default']]}"></body></html>'''
+    )
     soup = BeautifulSoup(context, 'html.parser')
-    hilight_styles_init()
+    highlight_styles_init()
     if flags_def['latin'] in flags:
-        soup.style.append(hilight_styles[flags_def['latin']])
+        soup.style.append(highlight_styles[flags_def['latin']])
     if flags_def['cyrillic'] in flags:
-        soup.style.append(hilight_styles[flags_def['cyrillic']])
+        soup.style.append(highlight_styles[flags_def['cyrillic']])
     if flags_def['numbers'] in flags:
-        soup.style.append(hilight_styles[flags_def['numbers']])
+        soup.style.append(highlight_styles[flags_def['numbers']])
     if flags_def['spaces'] in flags:
-        soup.style.append(hilight_styles[flags_def['spaces']])
+        soup.style.append(highlight_styles[flags_def['spaces']])
     if flags_def['punctuation'] in flags:
-        soup.style.append(hilight_styles[flags_def['punctuation']])
+        soup.style.append(highlight_styles[flags_def['punctuation']])
     if flags_def['emails'] in flags:
-        soup.style.append(hilight_styles[flags_def['emails']])
+        soup.style.append(highlight_styles[flags_def['emails']])
     if flags_def['replace'] in flags:
-        soup.style.append(hilight_styles[flags_def['replace']])
+        soup.style.append(highlight_styles[flags_def['replace']])
 
     tl = text.split('\n')
 
-    if flags_def['noemails'] in flags:
+    if flags_def['no_emails'] in flags:
         n = []
         if tl[-1] == '':
             n = ['']
@@ -226,29 +295,6 @@ p, li { white-space: pre-wrap; }
                 tl.remove(line)
 
     for s in tl:
-        hilight_context(s, soup, flags)
+        highlight_context(s, soup, flags)
     res_context = str(soup)
     return res_context
-
-if __name__ == '__main__':
-    for i in []:
-        print('loop')
-    mail = 'vvvvvvvvvvvvvv            sssss orlova_nadya@bk.ru jjjjjjjjjjj office@ortos.biz xxxxxxxxxxxxxx'
-    res = mail_regex.findall(mail)
-
-    # res = re.findall(r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)", mail)
-    spl = []
-    # if res:
-    #     spl = mail.split(res[0])
-    for m in res:
-        sp = mail.split(m)
-        mail = mail.replace(m, '')
-        mail = mail.replace(sp[0], '')
-        # print(sp[0])
-        # print(m)
-        spl.append(sp[0])
-        spl.append(m)
-    if len(sp) > 1:
-        spl.append(sp[1])
-    print(spl)
-    # transform_context(testTextEditContext, 'e')

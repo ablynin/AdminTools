@@ -1,6 +1,4 @@
-import ipaddress
-
-class Ipaddress():
+class Ipaddress:
     def __init__(self, ip='127.0.0.1/32'):
         self.ip = ip
 
@@ -19,21 +17,24 @@ class Ipaddress():
                 self._mask = int(ip_mask[1])
             except ValueError:
                 if self._mask in self.masks:
-                    self._mask = self.masks.index(self._mask)
+                    self._mask = self.masks.index(str(self._mask))
                 else:
                     raise
 
-    def _ip_to_bin(self, ip):
+    @staticmethod
+    def _ip_to_bin(ip):
         chunks = ip.split('.')
         s = ''
         for chunk in chunks:
             s += format(int(chunk), '08b')
         return s
 
-    def _mask_to_bin(self, mask):
+    @staticmethod
+    def _mask_to_bin(mask):
         return '1' * mask + '0' * (32 - mask)
 
-    def _bin_to_address(self, binary_address):
+    @staticmethod
+    def _bin_to_address(binary_address):
         chunks = []
         for i in range(4):
             chunk = binary_address[i * 8:i * 8 + 8]
@@ -58,21 +59,11 @@ class Ipaddress():
             hsts['broadcast'] = '-'
         else:
             hsts['broadcast'] = self._bin_to_address(format(net + hstc + 1, '32b'))
-        hsts['hostcount'] = hstc
+        hsts['host_count'] = hstc
         if self._mask > 30:
-            hsts['hostmin'] = '-'
-            hsts['hostmax'] = '-'
+            hsts['host_min'] = '-'
+            hsts['host_max'] = '-'
         else:
-            hsts['hostmin'] = self._bin_to_address(format(net + 1, '32b'))
-            hsts['hostmax'] = self._bin_to_address(format(net + hstc, '32b'))
+            hsts['host_min'] = self._bin_to_address(format(net + 1, '32b'))
+            hsts['host_max'] = self._bin_to_address(format(net + hstc, '32b'))
         return hsts
-
-def main():
-    ip = Ipaddress()
-    ip.ip = '192.168.0.5/24'
-
-    print(ip.ip, ip.hosts)
-
-
-if __name__ == '__main__':
-    main()

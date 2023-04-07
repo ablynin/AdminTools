@@ -76,7 +76,7 @@ class TreeModel(QAbstractItemModel):
         ti = TreeItem(data, parent)
         ti.linkedObject = obj
         parent.appendChild(ti)
-        index = self.createIndex(parent.childItems.index(ti), defColumnCount -1 , ti)
+        index = self.createIndex(parent.childItems.index(ti), defColumnCount - 1, ti)
         self.indexes.append(index)
 
         return ti, index

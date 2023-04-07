@@ -86,10 +86,6 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
         redo_shortcut.activated.connect(self.redo)
         self.action_Redo.setShortcut(redo_key_sequence)
 
-        copy_all_key_sequence = QKeySequence(_translate('Application', 'Ctrl+Shift+C'))
-        copy_all_shortcut = QtWidgets.QShortcut(copy_all_key_sequence, self)
-        copy_all_shortcut.activated.connect(self.to_clipboard)
-
         self.menubar.hovered.connect(self.main_menu_modifier)
 
         self.lineEdit_other_mac_format.textChanged.connect(self.set_mac_format)
@@ -177,9 +173,9 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
             self._ip.ip = ip
             self.label_other_ipcalc_network.setText(self._ip.hosts['network'])
             self.label_other_ipcalc_broadcast.setText(self._ip.hosts['broadcast'])
-            self.label_other_ipcalc_hostcount.setText(str(self._ip.hosts['host_count']))
-            self.label_other_ipcalc_hostmin.setText(self._ip.hosts['host_min'])
-            self.label_other_ipcalc_hostmax.setText(self._ip.hosts['host_max'])
+            self.label_other_ipcalc_host_count.setText(str(self._ip.hosts['host_count']))
+            self.label_other_ipcalc_host_min.setText(self._ip.hosts['host_min'])
+            self.label_other_ipcalc_host_max.setText(self._ip.hosts['host_max'])
         except ValueError:
             QMessageBox.critical(self, appname, _translate('Application', 'Invalid IP-address.'))
 
@@ -203,7 +199,6 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
             self.action_Undo.setEnabled(False)
             self.action_Redo.setEnabled(False)
         elif self.tabWidget.currentIndex() == 1:
-            # print('Got it')
             self.action_Undo.setEnabled(self._history.undo_available)
             self.action_Redo.setEnabled(self._history.redo_available)
 
@@ -242,7 +237,6 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
         snap[ten] = {}
         snap[ten]['setHtml'] = self.textEdit_email_checker.toHtml()
         snap[ten]['setPosition'] = self.textEdit_email_checker.textCursor().position()
-        # print(snap)
         return snap
 
     def load_snapshot(self, snapshot):
@@ -281,15 +275,10 @@ class AdminToolsWindow(QtWidgets.QMainWindow, MainWindow.Ui_MainWindow):
 
     def undo(self):
         snap = self._history.undo()
-        # print(snap)
-        # print(self._history.history_pos)
         self.load_snapshot(snap)
-        # self.tabWidget.tabBar().moveTab(0,2)
 
     def redo(self):
         snap = self._history.redo()
-        # print(snap)
-        # print(self._history.history_pos)
         self.load_snapshot(snap)
 
     def init_about(self):
@@ -318,9 +307,7 @@ Program is written on Python 3.6 and QT 5.'''))
         self.about.exec()
 
     def create_tools_model(self):
-        # print('Creating model')
         self.toolsModel = toolstreemodel.TreeModel()
-
         for i in range(len(self.tool_tabs)):
             if i == self.tool_tabs.index(self.tab_other):
                 ti, index = self.toolsModel.addItem(data=self.tool_names[self.tab_other], obj=self.tab_other)
@@ -383,21 +370,14 @@ Program is written on Python 3.6 and QT 5.'''))
         self.optionsWindow.tools_treeView.setModel(self.toolsModel)
         self.optionsWindow.tools_treeView.setHeaderHidden(True)
         self.optionsWindow.tools_treeView.expandAll()
-        # self._restore_tools(self.optionsWindow.tools_treeWidget.invisibleRootItem(), self.tools)
-        # print('Options inited')
-        # weight = [f.Thin, f.ExtraLight, f.Light, f.Normal, f.Medium, f.DemiBold, f.Bold, f.ExtraBold, f.Black]
 
     def show_options(self):
         self.init_options()
         res = self.options.exec()
         if res:
-            # print('showOptions if res', self.tmp_colors.items())
             for obj, color in self.tmp_colors.items():
-                # print(obj)
-                # print(obj.objectName())
                 flag = email_checker.flags_def[obj.objectName().split('_')[-1]]
                 email_checker.colors_def[flag] = color.name()
-            # print('for obj, color in self.tmp_colors.items():')
             email_checker.font_size = self.optionsWindow.doubleSpinBox_fonts_email_checker.value()
             email_checker.font_family = self.optionsWindow.fontComboBox_fonts_email_checker.currentFont().family()
             font = QtGui.QFont(
@@ -412,9 +392,6 @@ Program is written on Python 3.6 and QT 5.'''))
                                                       email_checker.colors_def[email_checker.flags_def['password']])
             email_checker.bold = self.optionsWindow.checkBox_email_checker_Bold.isChecked()
             self.textEdit_email_checker.textChanged.emit()
-            # self.tools = self._dump_tools(self.optionsWindow.tools_treeWidget.invisibleRootItem())
-            # self.tools = self.toolsModel.dump_tree()
-            # self.tools_set()
             self.set_tools_from_tools_model()
 
         self.tmp_colors = {}
@@ -513,17 +490,13 @@ Program is written on Python 3.6 and QT 5.'''))
             flag += 's'
         if self.checkBox_passgen_spaces.isChecked():
             flag += 'r'
-        if self.checkBox_passgen_csymbols.isChecked():
+        if self.checkBox_passgen_cyrillic_symbols.isChecked():
             flag += 'q'
         if self.checkBox_passgen_escape.isChecked():
             flag += 'e'
         if not flag:
             flag = 'a'
         return flag
-
-    def remove_incorrect_lines(self):
-        print(self.textEdit_email_checker.textCursor().position())
-        # test(self)
 
     def get_email_checker_flags(self):
         flag = ''
@@ -548,8 +521,6 @@ Program is written on Python 3.6 and QT 5.'''))
         return flag
 
     def email_checker_transform(self):
-        # print("Transform")
-        # print('email_checker_transform', self.textEdit_email_checker.toHtml())
         cur = self.textEdit_email_checker.textCursor()
         p = cur.position()
 
@@ -663,8 +634,7 @@ def load_settings(wnd, filename='%s\\%s.ini' % (ini_dir, appname)):
             elif sec == MenuLanguageSectionName:
                 item = int(cfg[sec]['CheckedItem'])
                 wnd.menuLanguage.actions()[item].setChecked(True)
-                if item:
-                    load_language(wnd, item)
+                load_language(wnd, item)
             elif sec == FontsSectionName:
                 font = QtGui.QFont('MS Shell Dlg 2', 8)
                 for key in cfg[sec]:

@@ -21,7 +21,7 @@
        <bool>false</bool>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="movable">
        <bool>true</bool>
@@ -142,7 +142,7 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QCheckBox" name="checkBox_passgen_symbols">
+              <widget class="QCheckBox" name="checkBox_passgen_cyrillic_symbols">
                <property name="text">
                 <string>Cyrillic symbols</string>
                </property>
@@ -831,9 +831,9 @@
   <tabstop>checkBox_passgen_pretty</tabstop>
   <tabstop>checkBox_passgen_unique</tabstop>
   <tabstop>checkBox_passgen_numbers</tabstop>
-  <tabstop>checkBox_passgen_symbols</tabstop>
+  <tabstop>checkBox_passgen_cyrillic_symbols</tabstop>
   <tabstop>checkBox_passgen_spaces</tabstop>
-  <tabstop>checkBox_passgen_symbols</tabstop>
+  <tabstop>checkBox_passgen_cyrillic_symbols</tabstop>
   <tabstop>checkBox_passgen_escape</tabstop>
   <tabstop>pushButton_passgen_generate</tabstop>
   <tabstop>pushButton_passgen_clipboard</tabstop>
